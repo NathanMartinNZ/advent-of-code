@@ -44,13 +44,13 @@ def shortest_path(lines, start, end):
             return curr_path
         
         for next_coord in next_move(curr_x, curr_y):
-            nextX, nextY = next_coord
+            next_x, next_y = next_coord
             
             # Skip if invalid
-            if nextX < 0 or nextX >= rows or \
-               nextY < 0 or nextY >= cols or \
+            if next_x < 0 or next_x >= rows or \
+               next_y < 0 or next_y >= cols or \
                next_coord in visited_coords or \
-               (lines[nextY][nextX] - lines[curr_y][curr_x]) > 1:
+               (lines[next_y][next_x] - lines[curr_y][curr_x]) > 1:
                 continue
             
             searching_paths.append(curr_path + [next_coord])
